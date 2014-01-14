@@ -26,7 +26,7 @@
 
 <div class="esupTwitter">
 
-<div class="portlet-title wrapper-cms">
+<div class="portlet-title">
   	<img class="profileImg" src="${twitterProfile.profileImageUrl}" alt="${twitterProfile.name}" />
     <h3 class="profilTitle">
     	<a href="https://twitter.com/${twitterProfile.screenName}" title="https://twitter.com/${twitterProfile.screenName}" target="_blank"></a>
@@ -40,7 +40,7 @@
 	    </c:choose>
   	</h3>
 </div>
-<div class="portlet-note wrapper-cms profilDesc">
+<div class="portlet-note profilDesc">
 	<rx:text id="text">
 	   ${twitterProfile.description}
 	</rx:text>
@@ -54,7 +54,7 @@
 
   <div class="portlet-section-body">
 
-    <ul>
+    <ul data-role="listview">
       <c:forEach var="tweet" items="${tweetList}">
         <li class="esuptwitter-list">
             <c:choose>
@@ -65,8 +65,8 @@
                 <rx:text id="texturl">
                   <rx:substitute regexp="parseurl" text="text" />
                 </rx:text>
-          		<a href="https://twitter.com/${tweet.retweetedStatus.user.screenName}/status/${tweet.id}" title="https://twitter.com/${tweet.retweetedStatus.user.screenName}/status/${tweet.id}" target="_blank">
-	                <img 
+          		<a class="tweetLink" href="https://twitter.com/${tweet.retweetedStatus.user.screenName}/status/${tweet.id}" title="https://twitter.com/${tweet.retweetedStatus.user.screenName}/status/${tweet.id}" target="_blank">
+	                <img class="ui-li-thumb"
 	                    src="${tweet.retweetedStatus.user.profileImageUrl}"
 	                    alt="${tweet.retweetedStatus.user.name}"
 	                />
@@ -80,8 +80,8 @@
                 <rx:text id="texturl">
                   <rx:substitute regexp="parseurl" text="text" />
                 </rx:text>
-          		<a href="https://twitter.com/${tweet.user.screenName}/status/${tweet.id}" title="https://twitter.com/${tweet.user.screenName}/status/${tweet.id}" target="_blank">
-	                <img 
+          		<a class="tweetLink" href="https://twitter.com/${tweet.user.screenName}/status/${tweet.id}" title="https://twitter.com/${tweet.user.screenName}/status/${tweet.id}" target="_blank">
+	                <img class="ui-li-thumb"
 	                    src="${tweet.user.profileImageUrl}"
 	                    alt="${tweet.user.name}"
 	                />
@@ -89,10 +89,10 @@
 	            </a>
               </c:otherwise>
             </c:choose>
-            <p>
+            <p class="tweetText">
             <rx:substitute regexp="parseatorhash" text="texturl" />
             </p>
-            <p>
+            <p class="retweetedBy">
                 ${tweet.createdAt}
                 <c:choose>
                   <c:when test="${not empty tweet.retweetedStatus}">

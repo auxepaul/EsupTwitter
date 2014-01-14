@@ -10,7 +10,11 @@ margin-right: 10px;
 float: left;
 border-radius: 1em;
 height: 60px;
-margin: 0px 10px 5px 0px;"
+margin: 0px 10px 0px 0px;
+}
+
+.esupTwitter .portlet-title {
+padding: 0 .6em .6em .6em;
 }
 
 .esupTwitter .profilTitle {
@@ -18,11 +22,16 @@ position: relative;
 }
 
 .esupTwitter .profilUrl {
-style="font-size: 90%;"
+font-size: 90%;
 }
 
 .esupTwitter .profilDesc {
 	clear: both;
+padding: .6em .6em 0 .6em;
+}
+
+.esupTwitter ul {
+margin: 0;
 }
 
 .esupTwitter .esuptwitter-list {
@@ -30,12 +39,22 @@ list-style: none;
 margin-top: 10px;
 }
 
-.esupTwitter .esuptwitter-list > p {
-padding-left: 60px;
-margin-bottom: 0;
+.esupTwitter .esuptwitter-list .tweetLink {
+height: 20px;
+min-height: 20px !important;
+float: left !important;
+padding: 0px !important;
 }
 
-.esupTwitter .esuptwitter-list > a > h4 {
+.esupTwitter .esuptwitter-list p {
+padding-left: 60px;
+padding-right: 20px;
+overflow: hidden;
+text-overflow: clip;
+white-space: normal;
+}
+
+.esupTwitter .esuptwitter-list a > h4 {
 display: block;
 padding-left: 60px;
 padding-bottom: 3px;
@@ -45,10 +64,28 @@ margin-bottom: 0;
 .esupTwitter .esuptwitter-list img {
 height: 40px;
 margin-top: 2px;
-border-radius: 1em;
+border-radius: 1em !important;
 float:left;
 }
 
+.esupTwitter .tweetText {
+clear: both;
+}
 
+.esupTwitter .retweetedBy {
+font-size: 60%;
+font-style: italic;
+padding-top: 2px !important;
+}
 
+.ui-mobile .esupTwitter .esuptwitter-list {
+margin-top: 0px;
+}
 
+.ui-mobile .esupTwitter .esuptwitter-list .tweetLink {
+height: 30px !important;
+}
+
+.ui-mobile .esupTwitter .esuptwitter-list img {
+margin-top: 10px !important;
+}
